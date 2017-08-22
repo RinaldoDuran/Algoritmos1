@@ -1,0 +1,73 @@
+#include "stdafx.h"
+#include "stdafx.h" 
+ #include <iostream> 
+ #include "conio.h" 
+ #include "math.h" 
+
+ 
+ using namespace std; 
+ 
+ 
+
+ 
+float determinante (float A, float B, float C); 
+void reales (float A, float B, float D, float &X1, float &X2); 
+void imaginarias (float A, float B,float D,float &X1, float &X2); 
+float unica (float A, float B);  
+ 
+ void main(){ 
+ 	float A,B,C,d,X,B1,B2; 
+ 	cout << "Ingrese el valor de A: "; 
+ 	cin >> A; 
+ 	cout << "Igrese el valor de B: "; 
+ 	cin >> B; 
+	 	cout << "Ingrese el valor de c: "; 
+ 	cin >> C; 
+ 	d=determinante(A,B,C); 
+ 	if (d>0){ 
+ 		reales(A,B,d,B1,B2); 
+ 		cout << "Solucion 1: " << B1; 
+ 		cout << "\nSolucion 2: " << B2; 
+ 	} 
+ 	else 
+ 		if (d=0){ 
+ 			X=unica(A,B); 
+ 			cout << "Solucion unica: " << X; 
+ 		} 
+		else { 
+ 			imaginarias(A,B,d,B1,B2); 
+ 			cout << "\n Solucion 1: " <<B1<< " + " << B2<< "i"; 
+ 			cout << "\n Solucion 2: " <<B2<< " - " << B2<< "i"; 
+ 		} 
+ 		getch(); 
+ } 
+ 
+ 
+ float determinante (float A, float B, float C) 
+ { 
+ 	float aux; 
+ 	aux=pow(B,2)-4*A*C; 
+ 	return aux; 
+ } 
+ 
+ 
+ void reales (float A, float B,float d,float &X1,float &X2) 
+ { 
+ 	X1=(-B+sqrt(d))/(2*A); 
+ 	X2=(-B-sqrt(d))/(2*A); 
+ } 
+ 
+ 
+ void imaginarias (float A, float B, float d,float &X1,float &X2) 
+ { 
+ 	X1=-B/(2*A);	
+ 	X2=sqrt(-d)/(2*A);  
+ } 
+ 
+ 
+ float unica (float A, float B) 
+ { 
+ 	float x; 
+ 	x=-B/(2*A); 
+ 	return x; 
+	 } 
