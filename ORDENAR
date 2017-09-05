@@ -1,0 +1,53 @@
+#include "stdafx.h"
+#include "stdlib.h"
+#include "conio.h"
+#include <iostream>
+#include <string>
+#include "math.h"
+#include "stdio.h"
+
+#define TAM 50
+using namespace std;
+
+void cargar(int V[], int n);
+void ordenar(int V[], int n);
+void masmeopos(int V[], int n);
+
+void main()
+{int V[TAM],n;
+do
+{cout<<"INGRESAR NUMERO DE ELEMENTOS:"<<endl;
+cin>>n;
+}
+while(n<0||n>TAM);
+cargar(V,n);
+
+ getch();
+}
+
+
+void cargar(int V[], int n)
+{int i;
+ for(i=0;i<n;i++)
+ {cout<<"V["<<i<<"]=";
+  cin>>V[i];
+ }
+}
+void ordenar(int V[], int n)
+{int i,j,aux;
+for (i=0;i<n-1;i++)
+{for(i=j;j<n-1;j++)
+{if(V[i]<V[j])
+{aux=V[i];
+ V[i]=V[j];
+ V[j]=aux;
+ }}}
+}
+
+
+/*void masmeopos(int V[], int n)
+{int ;
+
+
+
+
